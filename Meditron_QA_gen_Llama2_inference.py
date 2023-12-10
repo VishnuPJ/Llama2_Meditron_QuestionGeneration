@@ -78,8 +78,8 @@ model = PeftModel.from_pretrained(base_model,
     )
 # model = model.merge_and_unload()
 
-model.save_pretrained(r"Merged_Base+Adapter", safe_serialization=True)
-llama_tokenizer.save_pretrained(r"Merged_Base+Adapter")
+#model.save_pretrained(r"Merged_Base+Adapter", safe_serialization=True)
+#llama_tokenizer.save_pretrained(r"Merged_Base+Adapter")
 
 
 model = model.to("cuda")
