@@ -80,6 +80,10 @@ model = PeftModel.from_pretrained(base_model,
     torch_dtype=torch.float16,
     
     )
+
+model = model.to("cuda")
+model.eval()
+
 model = model.merge_and_unload()
 
 model.save_pretrained(r"Merged_Base+Adapter", safe_serialization=True)
