@@ -1,0 +1,15 @@
+1)Install llama.cpp
+	
+git clone https://github.com/ggerganov/llama.cpp.git
+mkdir build
+cd build
+cmake ..
+cmake --build . --config Release
+
+2)Go to llama.cpp/build/bin/Release
+Run the below command
+
+main -m "D:\Projects\Large_Language_Models(LLM)\Llama2-Question_Generation\Merged_Base+Adapter\meditron-7b-q8.gguf" -ngl 1500 --color  --temp 0.7 --repeat_penalty 1.1 -n 100 -p """<s> [INST] <<SYS>> You are a subject matter expert(SME) in medical domain.Given a context ,create multiple-choice questions (MCQs) based on the symptoms,causes, treatments, or characteristics associated within the context. Formulate four options, one of which should be the most likely or accurate choice based on the provided information.Also specify which is right choice. <</SYS>> Arthritis is the swelling and tenderness of one or more joints. The main symptoms of arthritis are joint pain and stiffness, which typically worsen with age. The most common types of arthritis are osteoarthritis and rheumatoid arthritis.Osteoarthritis causes cartilage — the hard, slippery tissue that covers the ends of bones where they form a joint — to break down. Rheumatoid arthritis is a disease in which the immune system attacks the joints, beginning with the lining of joints.Uric acid crystals, which form when there's too much uric acid in your blood, can cause gout. Infections or underlying disease, such as psoriasis or lupus, can cause other types of arthritis.Treatments vary depending on the type of arthritis. The main goals of arthritis treatments are to reduce symptoms and improve quality of life. [/INST] """
+
+
+
